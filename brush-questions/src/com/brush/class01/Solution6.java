@@ -7,6 +7,10 @@ package com.brush.class01;
  * hp[i]表示i号怪兽的血量
  * 再给定一个正数range，表示如果法师释放技能的范围长度
  * 被打到的每只怪兽损失1点血量。返回要把所有怪兽血量清空，至少需要释放多少次AOE技能？
+ *
+ *
+ *
+ * 线段树
  */
 public class Solution6 {
 
