@@ -65,6 +65,44 @@ public class Solution1 {
         return ans;
     }
 
+    //贪心+二分 N*logN
+    public static int maxPoint4(int[] arr, int L){
+        int N = arr.length;
+        int max = 0;
+        for (int i = 0; i < N; i++) {
+            //绳子以当前位置结束
+            int cur = arr[i];
+            //第一个比start小的点就是没有覆盖到的
+            int start = cur - L;
+            int index = firstSmallerIndex(0, i, start, arr);
+            int coverNumber = i - index;
+            max = Math.max(coverNumber, max);
+        }
+        return max;
+    }
+
+    public static int firstSmallerIndex(int L, int R, int target, int[] arr){
+        while (L <= R){
+            int mid = L + (R - L)/2;
+            if (arr[mid] >= target){
+                R = mid -1;
+            }else if (arr[mid] < target){
+                L = mid + 1;
+            }
+        }
+        return R;
+    }
+
+
+
+
+
+
+
+
+
+
+
     public static void main(String[] args) {
         int len = 100;
         int max = 1000;
@@ -74,8 +112,8 @@ public class Solution1 {
             int K = (int) (Math.random() * max);
             int[] arr = generateArray(len, max);
             int ans1 = maxPoint1(arr, K);
-            int ans2 = maxPoint2(arr, K);
-            if (ans1 != ans2) {
+            int ans4 = maxPoint4(arr, K);
+            if (ans1 != ans4) {
                 System.out.println("oops!");
                 break;
             }
