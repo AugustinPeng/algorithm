@@ -37,6 +37,5 @@ public class Solution4 {
                 {},
                 {},
         };
-        maxMoney1()
     }
 }
