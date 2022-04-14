@@ -118,3 +118,5 @@ CREATE TABLE "public"."quote_order_item" (
   CONSTRAINT "quote_order_item_pkey" PRIMARY KEY ("id")
 )
 ;
+
+https://github.com/AugustinPeng/algorithm/blob/master/brush-questions/docs/sql.md
